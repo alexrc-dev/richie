@@ -6,6 +6,7 @@ import { QueryClientProvider } from 'react-query';
 import { PropsWithChildren } from 'react';
 import createQueryClient from 'utils/react-query/createQueryClient';
 import DashBoard from 'components/DashBoard';
+import getBasename from './utils';
 
 jest.mock('utils/context', () => ({
   __esModule: true,
@@ -25,6 +26,7 @@ const Wrapper = ({ children }: PropsWithChildren<{}>) => (
   </IntlProvider>
 );
 
+window.history.pushState({}, 'Default Page', getBasename('en'));
 describe('<DashBoard />', () => {
   it('shows a dashboard', async () => {
     render(
@@ -33,6 +35,6 @@ describe('<DashBoard />', () => {
       </Wrapper>,
     );
 
-    screen.getByRole('heading', { level: 1, name: 'Dashboard' });
+    expect(screen.getAllByRole('heading', { level: 1, name: 'Dashboard' }).length).toEqual(1);
   });
 });
