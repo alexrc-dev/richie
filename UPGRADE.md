@@ -16,6 +16,11 @@ $ make migrate
 
 ## Unreleased
 
+- On frontend, the API interface `base` has been renamed into `dummy`.
+- `<header>`, `<nav>` and `<footer>` DOM structure was updated for better accessibility. Make
+  sure to check that everything still renders correctly if you override header or footer blocks
+  in your templates.
+
 ## 2.14.x to 2.15.x
 - RegisteredAddress now has a related stylesheet, you have to update the main stylesheet as follows:
   - `_main.scss`

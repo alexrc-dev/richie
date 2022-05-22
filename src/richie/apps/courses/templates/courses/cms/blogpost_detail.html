@@ -40,6 +40,7 @@
         {% if categories %}
         <div class="category-tag-list category-tag-list--primary">
             <div class="category-tag-list__container">
+                <p class="offscreen">{% trans "Categories" %}</p>
                 {% for category in categories %}
                     {% include "courses/cms/fragment_category_glimpse.html" with category_variant="tag" %}
                 {% endfor %}
@@ -51,6 +52,9 @@
     <div class="blogpost-detail">
 
         <div class="blogpost-detail__row">
+            {% block title %}
+                <h1 class="blogpost-detail__title">{% render_model current_page "title" %}</h1>
+            {% endblock title %}
 
             {% block subhead %}
                 <div class="blogpost-detail__subhead">
@@ -58,6 +62,7 @@
                         {% with category_variant="tag" %}
                             {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"categories" %}
                             <div class="blogpost-detail__theme">
+                                <p class="offscreen">{% trans "Categories" %}</p>
                                 {% placeholder "categories" current_page or %}
                                     <span class="blogpost-detail__empty">{% trans 'No categories yet.' %}</span>
                                 {% endplaceholder %}
@@ -90,10 +95,6 @@
                 </div>
             {% endblock subhead %}
 
-            {% block title %}
-                <h1 class="blogpost-detail__title">{% render_model current_page "title" %}</h1>
-            {% endblock title %}
-
             {% block social_networks %}
                 {% include "social-networks/blogpost-badges.html" with page_title=request.current_page.get_title page_url=request.current_page.get_absolute_url %}
             {% endblock social_networks %}
@@ -125,7 +126,8 @@
                                             {% if instance.picture.width >= 2328 %},{% thumbnail instance.picture 2328x9312 replace_alpha='#FFFFFF' subject_location=instance.picture.subject_location %} 2325w{% endif %} {# 3x776 #}
                                         "
                                         sizes="(min-width: 1200px) 775px, (min-width: 992px) 652px, (min-width: 768px) 720px, (min-width: 576px) 540px, 100vw"
-                                        alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'blog post cover image' %}{% endif %}"
+                                        {% comment %} the cover image is decorative {% endcomment %}
+                                        alt=""
                                     />
                                 {% endblockplugin %}
                             </div>
@@ -164,7 +166,7 @@
 
                         {% block related_blogposts %}
                             <div class="blogpost-glimpse-list">
-                                <p class="blogpost-glimpse-list__title"><span>{% trans 'Related posts' %}</span></p>
+                                <h2 class="blogpost-glimpse-list__title"><span>{% trans 'Related posts' %}</span></h2>
                                 {% for related_blogpost in current_page.blogpost.get_related_blogposts|slice:":3" %}
                                     {% include "courses/cms/fragment_blogpost_glimpse.html" with blogpost=related_blogpost blogpost_variant="mini" %}
                                 {% endfor %}

@@ -48,16 +48,15 @@ export const FonzieUserFactory = compose(
 
 export const ContextFactory = (context: Partial<CommonDataProps['context']> = {}) =>
   createSpec({
-    auth_endpoint: 'https://endpoint.test',
     csrftoken: faker.random.alphaNumeric(64),
     environment: 'test',
     authentication: {
-      backend: APIBackend.BASE,
+      backend: APIBackend.OPENEDX_HAWTHORN,
       endpoint: 'https://endpoint.test',
     },
     lms_backends: [
       {
-        backend: APIBackend.BASE,
+        backend: APIBackend.DUMMY,
         course_regexp: '.*',
         endpoint: 'https://endpoint.test',
       },

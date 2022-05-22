@@ -14,14 +14,25 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Fake authentication interface when using the `base` api interface
 - Added Dashboard internationalization
 - Avoid lag experienced by user on logout by not waiting for the logout request
   to succeed
 - Improve Sale Tunnel UX
 - Improve sale tunnel theme overriding
+- Improve html header, menu and footer structure for better keyboard and
+  screen reader UX
+- Improve overall accessibility, especially for screen reader users,
+  on all content pages: category list, category details, blogpost list,
+  blogpost details, program list, program details, organization detail.
+- Use `em` based media queries instead of `px` based media queries to fix all
+  UI bugs when using the website with a huge text-only zoom
 
 ### Fixed
 
+- Fix header layout issue when logo height is big
+- Fix `components.SaleTunnelStepPayment.userBillingAddressNoEntry` misspell
+- Remove z-index of course glimpse icon to fix an overlay issue
 - Fix erratic frontend test failure
 
 

@@ -1,12 +1,11 @@
 import { NavLink, useRoutes } from 'react-router-dom';
 import { ReactNode } from 'react';
-import { defineMessages, FormattedMessage } from 'react-intl';
-import useDashboardRoutes from '../../../hooks/useDashboardRoutes';
-import { Spinner } from '../../Spinner';
+import { defineMessages } from 'react-intl';
+import useDashboardRoutes from '../../hooks/useDashboardRoutes';
 
 export const messages = defineMessages({
   loadingNavigator: {
-    id: 'components.Dashboard.Navigator.loadingInitial',
+    id: 'components.Dashboard.Router.loadingInitial',
     defaultMessage: 'Loading navigator',
     description:
       'Accessible text for the initial loading spinner displayed when navigator is fetching',
@@ -14,23 +13,16 @@ export const messages = defineMessages({
 });
 
 const DashBoardNavigator = () => {
-  const { intlDashboardRoutes } = useDashboardRoutes();
-  const routesNode = useRoutes(intlDashboardRoutes);
+  const { routes } = useDashboardRoutes();
+  const routesNode = useRoutes(routes);
 
-  if (!intlDashboardRoutes) {
-    return (
-      <Spinner aria-labelledby="loading-routes">
-        <span id="loading-course">
-          <FormattedMessage {...messages.loadingNavigator} />
-        </span>
-      </Spinner>
-    );
+  if (!routes) {
+    throw new Error('dashboardRoutes has not been found !');
   }
-
   return (
     <>
       <nav>
-        {intlDashboardRoutes
+        {routes
           .filter((route) => route.path && route.title)
           .map<ReactNode>((route, index): ReactNode => {
             return (

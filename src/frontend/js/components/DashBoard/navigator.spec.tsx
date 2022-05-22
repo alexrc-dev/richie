@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import * as mockFactories from 'utils/test/factories';
 import { MemoryRouter } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
-import DashBoardNavigator from './index';
+import DashBoardNavigator from './Navigator';
 
 jest.mock('utils/context', () => ({
   __esModule: true,

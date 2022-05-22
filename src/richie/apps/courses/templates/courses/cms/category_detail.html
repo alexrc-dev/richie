@@ -1,6 +1,11 @@
 {% extends "richie/fullwidth.html" %}
 {% load cms_tags extra_tags i18n pagination_tags thumbnail %}
 
+{% block head_title %}
+    {% page_attribute "page_title" as category_title %}
+    {% blocktrans with category_title=category_title %}{{ category_title }} - Category{% endblocktrans %}
+{% endblock head_title %}
+
 {% block meta_html_default %}
     {% if not current_page|is_empty_placeholder:"description" %}
         <meta name="description" content="{% filter striptags|trim|slice:":160" %}{% show_placeholder 'description' current_page %}{% endfilter %}" />
@@ -43,7 +48,8 @@
                                 {% if instance.picture.width >= 3420 %},{% thumbnail instance.picture 3420x600 replace_alpha='#FFFFFF' crop upscale subject_location=instance.picture.subject_location %} 3420w{% endif %}
                             "
                             sizes="1140px"
-                            alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'category banner' %}{% endif %}"
+                            {% comment %} this is purely a decorative image, don't set any alternative text {% endcomment %}
+                            alt=""
                         />
                     {% endblockplugin %}
                 </div>
@@ -61,7 +67,8 @@
                                 {% if instance.picture.width >= 600 %},{% thumbnail instance.picture 600x600 replace_alpha='#FFFFFF' crop upscale subject_location=instance.picture.subject_location %} 600w{% endif %}
                             "
                             sizes="200px"
-                            alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'category logo' %}{% endif %}"
+                            {% comment %} this is purely a decorative image, don't set any alternative text {% endcomment %}
+                            alt=""
                         />
                     {% endblockplugin %}
                 </div>
@@ -101,7 +108,7 @@
                         <section class="category-glimpse-list">
                             <h2 class="category-detail__title">{% trans "Sub categories" %}</h2>
                             {% for child_category in children_categories %}
-                                {% include "courses/cms/fragment_category_glimpse.html" with category=child_category category_variant="glimpse" %}
+                                {% include "courses/cms/fragment_category_glimpse.html" with category=child_category category_variant="glimpse" header_level=3 %}
                             {% endfor %}
                         </section>
                     </div>
@@ -117,7 +124,7 @@
                         <section class="course-glimpse-list">
                             <h2 class="category-detail__title">{% trans "Related courses" %}</h2>
                             {% for course in page_obj.object_list %}
-                                {% include "courses/cms/fragment_course_glimpse.html" %}
+                                {% include "courses/cms/fragment_course_glimpse.html" with header_level=3 %}
                             {% endfor %}
                             {% if paginator.num_pages > 1 %}
                                 {% include "richie/pagination.html" with label=_("Courses pagination") %}
@@ -149,7 +156,7 @@
                         <section class="organization-glimpse-list">
                             <h2 class="category-detail__title">{% trans "Related organizations" %}</h2>
                             {% for organization in page_obj.object_list %}
-                                {% include "courses/cms/fragment_organization_glimpse.html" %}
+                                {% include "courses/cms/fragment_organization_glimpse.html" with header_level=3 %}
                             {% endfor %}
                             {% if paginator.num_pages > 1 %}
                                 {% include "richie/pagination.html" with label=_("Related organizations pagination") %}
@@ -168,7 +175,7 @@
                         <section class="blogpost-glimpse-list">
                             <h2 class="category-detail__title">{% trans "Related blogposts" %}</h2>
                             {% for blogpost in page_obj.object_list %}
-                                {% include "courses/cms/fragment_blogpost_glimpse.html" %}
+                                {% include "courses/cms/fragment_blogpost_glimpse.html" with header_level=3 %}
                             {% endfor %}
                             {% if paginator.num_pages > 1 %}
                                 {% include "richie/pagination.html" with label=_("Related blogposts pagination") %}
@@ -187,7 +194,7 @@
                         <section class="person-glimpse-list">
                             <h2 class="category-detail__title">{% trans "Related persons" %}</h2>
                             {% for person in page_obj.object_list %}
-                                {% include "courses/cms/fragment_person_glimpse.html" %}
+                                {% include "courses/cms/fragment_person_glimpse.html" with header_level=3 %}
                             {% endfor %}
                             {% if paginator.num_pages > 1 %}
                                 {% include "richie/pagination.html" with label=_("Related persons pagination") %}

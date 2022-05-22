@@ -1,20 +1,15 @@
 import { RouteObject } from 'react-router-dom';
 import { defineMessages, MessageDescriptor } from 'react-intl';
-import CourseList from './Views/CourseList';
 
 export interface DashBoardRoute extends RouteObject {
-  noIntlPath?: MessageDescriptor;
+  intlPath?: MessageDescriptor;
   show: () => boolean;
-  noIntlTitle: MessageDescriptor;
+  intlTitle: MessageDescriptor;
   title?: string;
+  protected?: boolean;
 }
 
 export const messages = defineMessages({
-  dashboardRoutePath: {
-    id: 'components.Dashboard.routes.dashboard.path',
-    description: '',
-    defaultMessage: 'dashboard',
-  },
   coursesDashBoardRouteTitle: {
     id: 'components.Dashboard.routes.courses.title',
     description: '',
@@ -28,20 +23,21 @@ export const messages = defineMessages({
   preferencesDashBoardRouteTitle: {
     id: 'components.Dashboard.routes.preferences.title',
     description: '',
-    defaultMessage: 'My preferences',
+    defaultMessage: 'My preferencess',
   },
 });
 
 const dashboardRoutes: Array<DashBoardRoute> = [
   {
-    element: <CourseList />,
-    noIntlPath: messages.coursesDashBoardRoutePath,
-    noIntlTitle: messages.coursesDashBoardRouteTitle,
+    element: <h2>Courses List</h2>,
+    intlPath: messages.coursesDashBoardRoutePath,
+    intlTitle: messages.coursesDashBoardRouteTitle,
     show: () => true,
+    protected: true,
   },
   {
     element: <h2>My preferences</h2>,
-    noIntlTitle: messages.preferencesDashBoardRouteTitle,
+    intlTitle: messages.preferencesDashBoardRouteTitle,
     show: () => true,
   },
 ];

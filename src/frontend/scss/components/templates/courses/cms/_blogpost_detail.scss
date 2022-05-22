@@ -17,6 +17,9 @@
 
   &__row {
     @include detail-row;
+
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -47,6 +50,7 @@
 
     .blogpost-glimpse-list__title {
       @include font-size($h5-font-size);
+      font-family: inherit;
       position: relative;
       margin: 0;
       padding: 0;
@@ -79,6 +83,7 @@
 
   &__subhead {
     padding: 0.5rem 0;
+    order: -1;
 
     @include media-breakpoint-up(lg) {
       display: flex;
@@ -126,7 +131,7 @@
         left: -0.6rem;
       }
 
-      &:first-child {
+      &:first-of-type {
         margin-left: 0;
 
         &::before {
