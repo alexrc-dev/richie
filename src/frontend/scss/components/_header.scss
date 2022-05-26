@@ -1,10 +1,10 @@
 // Main body header
-#site-header {
-  height: 96px;
-  @include media-breakpoint-up($r-topbar-breakpoint) {
-    height: 132px;
-  }
-}
+//#site-header {
+//  height: 96px;
+//  @include media-breakpoint-up($r-topbar-breakpoint) {
+//    height: 132px;
+//  }
+//}
 
 .topbar {
   $topbar-selector: &;
