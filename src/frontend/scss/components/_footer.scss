@@ -112,6 +112,15 @@
     height: 2.75rem;
   }
 
+  &__youtube_logo {
+    padding: 0;
+    align-items: center;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
+
   &__items {
     align-content: flex-start;
     @include sv-flex(1, 0, 100%);
