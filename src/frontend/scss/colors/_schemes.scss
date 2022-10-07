@@ -131,3 +131,19 @@ $white-mask-gradient-scheme: (
   background: $white-mask-gradient,
   hover-font-color: r-color('firebrick6'),
 ) !default;
+$codeala-primary-scheme: (
+  font-color: r-color('white'),
+  link-color: r-color('light-grey'),
+  svg-color: r-color('white'),
+  background: r-color('codea-primary'),
+  hover-font-color: r-color('white'),
+  hover-background: r-color('codea-secondary'),
+) !default;
+$codeala-secondary-scheme: (
+  font-color: r-color('white'),
+  link-color: r-color('light-grey'),
+  svg-color: r-color('white'),
+  background: r-color('codea-secondary'),
+  hover-font-color: r-color('white'),
+  hover-background: r-color('codea-primary'),
+) !default;

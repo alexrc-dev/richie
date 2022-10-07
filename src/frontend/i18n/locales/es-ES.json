@@ -1,55 +1,55 @@
 {
   "components.AddressesManagement.actionCreation": {
     "description": "Action name for address creation.",
-    "message": "creation"
+    "message": "Nueva dirección"
   },
   "components.AddressesManagement.actionDeletion": {
     "description": "Action name for address deletion.",
-    "message": "deletion"
+    "message": "Eliminar dirección"
   },
   "components.AddressesManagement.actionPromotion": {
     "description": "Action name for address promotion.",
-    "message": "promotion"
+    "message": "Escriba su dirección"
   },
   "components.AddressesManagement.actionUpdate": {
     "description": "Action name for address update.",
-    "message": "update"
+    "message": "Actializar dirección"
   },
   "components.AddressesManagement.addAddress": {
     "description": "Title of the address creation form",
-    "message": "Add a new address"
+    "message": "Agregar nueva dirección."
   },
   "components.AddressesManagement.addressInput": {
     "description": "Label of the \"address\" input",
-    "message": "Address"
+    "message": "Dirección"
   },
   "components.AddressesManagement.cancelButton": {
     "description": "Label of the cancel button",
-    "message": "Cancel"
+    "message": "Cancelar"
   },
   "components.AddressesManagement.cancelTitleButton": {
     "description": "Title of the cancel button",
-    "message": "Cancel edition"
+    "message": "Cancelar edición"
   },
   "components.AddressesManagement.cityInput": {
     "description": "Label of the \"city\" input",
-    "message": "City"
+    "message": "Ciudad"
   },
   "components.AddressesManagement.closeButton": {
     "description": "Label of the close button",
-    "message": "Go back"
+    "message": "Regresar"
   },
   "components.AddressesManagement.countryInput": {
     "description": "Label of the \"country\" input",
-    "message": "Country"
+    "message": "País"
   },
   "components.AddressesManagement.deleteButton": {
     "description": "Label of the delete button",
-    "message": "Delete"
+    "message": "Eliminar"
   },
   "components.AddressesManagement.deleteButtonLabel": {
     "description": "Title of the delete button",
-    "message": "Delete \"{title}\" address"
+    "message": "Eliminar dirección: \"{title}\""
   },
   "components.AddressesManagement.deletionConfirmation": {
     "description": "Confirmation message shown to the user when he wants to delete an address",
@@ -113,7 +113,7 @@
   },
   "components.CourseGlimpse.categoryLabel": {
     "description": "Category label text for screen reader users",
-    "message": "Category"
+    "message": "Categoria"
   },
   "components.CourseGlimpse.codeIconAlt": {
     "description": "Course code logo alternative text for screen reader users",
@@ -125,7 +125,7 @@
   },
   "components.CourseGlimpse.organizationIconAlt": {
     "description": "Organization logo alternative text for screen reader users",
-    "message": "Organization"
+    "message": "Organización"
   },
   "components.CourseGlimpseFooter.dateIconAlt": {
     "description": "Course date logo alternative text for screen reader users",
