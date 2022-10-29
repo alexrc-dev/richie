@@ -131,3 +131,22 @@ $white-mask-gradient-scheme: (
   background: $white-mask-gradient,
   hover-font-color: r-color('firebrick6'),
 ) !default;
+
+$pythonista-scheme: (
+        font-color: r-color('black'),
+        h1-color: r-color('pythonistacolor'),
+        h2-color: r-color('pythonistasecolor'),
+        svg-color: r-color('black'),
+        background: r-color('pythonistacolor'),
+        hover-font-color: r-color('white'),
+        hover-background: r-color('pyblue'),
+);
+$pythonista-secondary-scheme: (
+        font-color: r-color('black'),
+        h1-color: r-color('pysecondarymain'),
+        h2-color: r-color('pythonistasecolor'),
+        svg-color: r-color('black'),
+        background: r-color('pysecondarymain'),
+        hover-font-color: r-color('black'),
+        hover-background: r-color('pysecondaryfade'),
+);

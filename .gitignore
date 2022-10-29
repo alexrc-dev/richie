@@ -98,3 +98,5 @@ docker/files/etc/nginx/ssl/*
 
 # Meld git diff tool
 *.orig
+
+.idea

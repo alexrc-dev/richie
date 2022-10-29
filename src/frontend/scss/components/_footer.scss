@@ -205,6 +205,14 @@
     font-family: $r-font-family-montserrat;
     font-weight: $font-weight-boldest;
   }
+  &__youtube_logo {
+    padding: 0;
+    align-items: center;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
 
   .richie-react--language-selector {
     display: flex;
