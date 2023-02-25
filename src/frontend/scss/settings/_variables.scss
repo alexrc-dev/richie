@@ -40,8 +40,8 @@ $link-color: r-theme-val(body-content, base-link-color);
 $link-hover-color: darken($link-color, 15%);
 
 // Adjust font families
-$font-family-base: $r-font-family-hind;
-$headings-font-family: $r-font-family-montserrat;
+$font-family-base: $r-font-family-atkinson;
+$headings-font-family: $r-font-family-atkinson;
 
 // Should be near to expected 14px from mockup
 $font-size-base: 0.8rem;

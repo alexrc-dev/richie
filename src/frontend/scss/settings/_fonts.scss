@@ -44,11 +44,44 @@
     url('/static/richie/fonts/hind/hind-semibold.woff2') format('woff2');
 }
 
+/*Atkinson*/
+@font-face {
+  font-family: 'Atkinson';
+  font-display: swap;
+  font-weight: normal;
+  src: url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Regular-102.woff") format('woff'),
+    url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Regular-102a.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson';
+  font-display: swap;
+  font-weight: bold;
+  src: url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Bold-102.woff") format('woff'),
+    url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Bold-102a.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson';
+  font-display: swap;
+  font-weight: normal;
+  font-style: italic;
+  src: url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Italic-102.woff") format('woff'),
+    url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-Italic-102a.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson';
+  font-display: swap;
+  font-weight: bold;
+  font-style: italic;
+  src: url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-BoldItalic-102.woff") format('woff'),
+    url("/static/richie/fonts/atkinson/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format('woff2');
+}
 // Font family class helpers by name
 $r-font-family-hind: 'Hind', sans-serif;
+$r-font-family-atkinson: 'Atkinson', sans-serif;
 $r-font-family-montserrat: 'Montserrat', sans-serif;
 
 $r-fonts: (
   hind: $r-font-family-hind,
+  atkinson: $r-font-family-atkinson,
   montserrat: $r-font-family-montserrat,
 );
